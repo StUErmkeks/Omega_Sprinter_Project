@@ -27,7 +27,11 @@
 \author{Nils Brück}
 \date{\today}
 
-\renewcommand{\contentsname}{Inhalsverzeichnis}}%Umbenenen des Inhaltsverzeichnisses
+\renewcommand{\contentsname}{Inhalsverzeichnis}%Umbenenen des Inhaltsverzeichnisses
+
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+
+\captionsetup{justification=raggedright, singlelinecheck=false, font={scriptsize, it, color=gray}}%linksbündige, kleine, kursive, farbige caption
 
 \begin{document}
 
@@ -52,7 +56,7 @@
 
 \listoffigures
 
-\listoftables
+%\listoftables
 
 \newpage
 
@@ -64,7 +68,18 @@
 
 \subsection{Produkt und Idee in eigenen Worten}
 
-Grundidee des Spiels ist ein 2D-Jump-and-Run, vereint mit Run-and-Gun-Elementen. Das grundlegende Ziel ist es, das Levelende, ähnlich einer Flagge bei Super Mario, zu erreichen, um das Level abzuschließen. Außerdem sollen vereinzelt Sammelelemente wie Münzen und Energiebälle zu finden sein. Der Schwerpunkt des Spiels wird es sein, lineare Level mit Platforming-Einlagen und verschiedenen Gegnerarten abzuschließen und nach Möglichkeit so viele Sammelobjekte wie möglich zu erhalten. Die HUD-Elemente sollen eher sparsam sein: ein Energietracker als Lebensanzeige in Form einer Zahl von 1 bis 100 und ein Münzzähler, der das gesamte Spiel hindurch hochzählt. In den Levels soll es Checkpoints geben, an denen ein Respawn nach dem Tod möglich ist. Damit das Sterben auch bestraft wird, verliert der Spieler pro Tod Teile seiner Münzen. Fallen diese auf Null, wird das Level beendet und der Spieler kommt zurück an den Levelanfang. Um das Spiel zu beenden, muss das letzte Level erreicht und darin eine finale, schwere Herausforderung mit einem Boss bestanden werden. Nach dem Besiegen des finalen Bosses ist es möglich, den Zielbereich zu erreichen und damit das letzte Level abzuschließen.
+Grundidee des Spiels ist ein 2D-Jump-and-Run, vereint mit Run-and-Gun-Elementen. Das grundlegende
+Ziel ist es, das Levelende, ähnlich einer Flagge bei Super Mario, zu erreichen, um das Level abzuschließen.
+Außerdem sollen vereinzelt Sammelelemente wie Münzen und Energiebälle zu finden sein. Der Schwerpunkt
+des Spiels wird es sein, lineare Level mit Platforming-Einlagen und verschiedenen Gegnerarten abzuschließen
+und nach Möglichkeit so viele Sammelobjekte wie möglich zu erhalten. Die HUD-Elemente sollen eher
+sparsam sein: ein Energietracker als Lebensanzeige in Form einer Zahl von 1 bis 100 und ein Münzzähler,
+der das gesamte Spiel hindurch hochzählt. In den Levels soll es Checkpoints geben, an denen ein Respawn
+nach dem Tod möglich ist. Damit das Sterben auch bestraft wird, verliert der Spieler pro Tod Teile seiner
+Münzen. Fallen diese auf Null, wird das Level beendet und der Spieler kommt zurück an den Levelanfang.
+Um das Spiel zu beenden, muss das letzte Level erreicht und darin eine finale, schwere Herausforderung
+bestehen. Grundlegend orientiert sich das Spiel an den originalen Mega Man Spielen.
+
 
 \subsection{Prototypen}
 
@@ -74,7 +89,6 @@ Start und Idee in einem Level
 
 \begin{figure}[h]
 	\includegraphics[scale=0.5] {Start_game.png}
-	 \captionsetup{justification=raggedright, singlelinecheck=false, font={scriptsize, it, color=gray}}%linksbündige, kleine, kursive, farbige caption
 	
 	\vspace{-2mm}
 	
@@ -82,18 +96,31 @@ Start und Idee in einem Level
 	\label{Prototyp Start/Ingame}
 \end{figure}
 
+Schuss Mechanik
+
+\vspace{-2mm}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.45] {Game_shoot.png}
+	
+	\vspace{-3mm}
+	
+	\tiny{\caption {Schuss Mechanik}}
+	\label{Schuss Mechanik Idee}
+\end{figure}
+
+
 Ziel eines Levels
 
 \vspace{-2mm}
 
 \begin{figure}[h]
-	\includegraphics[scale=0.5] {Goal_hah.png}
-	\captionsetup{justification=raggedright, singlelinecheck=false, font={scriptsize, it, color=gray}}%linksbündige, kleine, kursive, farbige caption
+	\includegraphics[scale=0.4] {Goal_hah.png}
 	
 	\vspace{-2mm}
 	
 	\tiny{\caption {Levelziel}}
-	\label{Levelziel}
+	\label{Levelziel Idee}
 \end{figure}
 
 \newpage

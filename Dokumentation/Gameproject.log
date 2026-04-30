@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.21)  30 APR 2026 11:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.21)  30 APR 2026 13:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -410,13 +410,13 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
     but found:
         2025/11/14 1.11b (Carsten Heinz)
     so I'm assuming it got fixed.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 32
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 36
 .
 (C:\Users\sturm\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 32.
+(Font)              scaled to size 11.39996pt on input line 36.
 
 (C:\Users\sturm\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
@@ -425,26 +425,26 @@ File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 ) (Gameproject.aux)
 \openout1 = `Gameproject.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 32.
+(Font)              scaled to size 9.49997pt on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -516,21 +516,21 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\sturm\AppData\Local\Programs\MiKTeX\tex/latex/fmtcount\fc-english.def
 File: fc-english.def 2016/01/12
 )
-Package hyperref Info: Link coloring OFF on input line 32.
+Package hyperref Info: Link coloring OFF on input line 36.
  (Gameproject.out) (Gameproject.out)
 \@outlinefile=\write3
 \openout3 = `Gameproject.out'.
 
 \c@lstlisting=\count344
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 37.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
+(Font)              scaled to size 16.41594pt on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
 
 
 (C:\Users\sturm\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
 
 
 (C:\Users\sturm\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -541,9 +541,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/sturm/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/stur
 m/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 51.
+(Font)              scaled to size 13.67995pt on input line 55.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 51.
+(Font)              scaled to size 13.67995pt on input line 55.
 
 (Gameproject.toc
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
@@ -556,45 +556,46 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 \tf@lof=\write5
 \openout5 = `Gameproject.lof'.
 
- (Gameproject.lot)
-\tf@lot=\write6
-\openout6 = `Gameproject.lot'.
-
  [1]
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 65.
+(Font)              scaled to size 11.39996pt on input line 69.
 
-Overfull \hbox (1.46413pt too wide) in paragraph at lines 67--68
+Overfull \hbox (1.46413pt too wide) in paragraph at lines 71--82
 \T1/phv/m/n/10 des Spiels wird es sein, lin-eare Level mit Platforming-Einlagen
  und ver-schiede-nen Geg-ner-arten abzuschlieÿen
  []
 
-<Start_game.png, id=41, 767.36688pt x 248.93pt>
+<Start_game.png, id=42, 767.36688pt x 248.93pt>
 File: Start_game.png Graphic file (type png)
 <use Start_game.png>
-Package pdftex.def Info: Start_game.png  used on input line 76.
+Package pdftex.def Info: Start_game.png  used on input line 91.
 (pdftex.def)             Requested size: 383.68251pt x 124.46469pt.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 4.74998pt on input line 81.
+(Font)              scaled to size 4.74998pt on input line 95.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 81.
+(Font)              scaled to size 6.64998pt on input line 95.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 81.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 95.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 6.64998pt on input line 81.
-<Goal_hah.png, id=43, 589.20125pt x 245.91875pt>
+(Font)              scaled to size 6.64998pt on input line 95.
+<Game_shoot.png, id=44, 422.57875pt x 293.095pt>
+File: Game_shoot.png Graphic file (type png)
+<use Game_shoot.png>
+Package pdftex.def Info: Game_shoot.png  used on input line 104.
+(pdftex.def)             Requested size: 190.15868pt x 131.89153pt.
+<Goal_hah.png, id=45, 589.20125pt x 245.91875pt>
 File: Goal_hah.png Graphic file (type png)
 <use Goal_hah.png>
-Package pdftex.def Info: Goal_hah.png  used on input line 90.
-(pdftex.def)             Requested size: 294.5999pt x 122.95906pt.
+Package pdftex.def Info: Goal_hah.png  used on input line 118.
+(pdftex.def)             Requested size: 235.67632pt x 98.36575pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.99 \newpage
-              [1 <./Start_game.png> <./Goal_hah.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
+l.126 \newpage
+               [1 <./Start_game.png> <./Game_shoot.png> <./Goal_hah.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 130--133
 
  []
 
@@ -607,20 +608,20 @@ Package rerunfilecheck Info: File `Gameproject.out' has not changed.
 (rerunfilecheck)             Checksum: 8D99B23248FEDCA0ACBEA502A41A7546;633.
  ) 
 Here is how much of TeX's memory you used:
- 14701 strings out of 467871
- 232633 string characters out of 5418376
- 659932 words of memory out of 5000000
- 43350 multiletter control sequences out of 15000+600000
+ 14702 strings out of 467871
+ 232582 string characters out of 5418376
+ 661017 words of memory out of 5000000
+ 43354 multiletter control sequences out of 15000+600000
  659912 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,84p,1245b,460s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,84p,1046b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/sturm/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a
 .pfb><C:/Users/sturm/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhv
 r8a.pfb><C:/Users/sturm/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/
 uhvro8a.pfb>
-Output written on Gameproject.pdf (4 pages, 1051733 bytes).
+Output written on Gameproject.pdf (4 pages, 1477857 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
+ 82 PDF objects out of 1000 (max. 8388607)
  18 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
