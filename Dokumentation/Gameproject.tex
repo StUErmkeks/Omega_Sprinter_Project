@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage[a4paper, margin=2.5cm]{geometry} 
+\usepackage[T1]{fontenc} %lädt Deutsche schriftzeichen
+\usepackage{amssymb}%für Mathe
+\usepackage{setspace} %für Zeilen Abstand 
+\usepackage[none]{hyphenat} % Silbentrennung deaktivieren 
+\usepackage{fancyhdr}%Kopf und Fußzeile: https://de.overleaf.com/learn/latex/Headers_and_footers
+\usepackage{graphicx}%Zum Bilder einfügen
+\usepackage{caption}%captions für bilder
+\usepackage{float}%glaube auch für Bilder
+\usepackage[dvipsnames]{xcolor}%Für Farbe 
+\usepackage{colortbl}%farbe für tabelle
+\usepackage{wrapfig}%Für gescheites einfügen von Bildern
+\usepackage[ddmmyyyy]{datetime}%zum bearbeiten vom Datungs Format
+\renewcommand{\dateseparator}{.}%ändern von / zu .
+\usepackage{url} % make urls clickable
+\usepackage[scaled]{helvet}               %Default helevet schriftart
+\renewcommand{\familydefault}{\sfdefault} %Default helevet schriftart
+\usepackage{hyperref}%Hyperlinks
+\usepackage{listings}%Code meines wissens nach
+
+\setlength{\parindent}{0pt}%Indent von zeilen weg
+
+\fontsize{12}{13}
+
+\title{Projekt Spieleentwicklung: Omega Sprinter}
+\author{Nils Brück}
+\date{\today}
+
+\renewcommand{\contentsname}{Inhalsverzeichnis}}%Umbenenen des Inhaltsverzeichnisses
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\maketitle
+
+\newpage
+
+\setcounter{page}{1} % Neustart der Seitenzählung
+
+\pagenumbering{roman}%nummerstyle ändern
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[HL]{Nils Lasse Brück}
+\fancyhead[HC]{Projekt Spieleentwicklung: Omega Sprinter}
+\fancyhead[HR]{Praktische Informatik}
+\fancyfoot[R]{\thepage}
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\newpage
+
+\setcounter{page}{1} % Neustart der Seitenzählung
+
+\pagenumbering{arabic}%nuberstyle ändern
+
+\section{Planung}
+
+\subsection{Produkt und Idee in eigenen Worten}
+
+Grundidee des Spiels ist ein 2D-Jump-and-Run, vereint mit Run-and-Gun-Elementen. Das grundlegende Ziel ist es, das Levelende, ähnlich einer Flagge bei Super Mario, zu erreichen, um das Level abzuschließen. Außerdem sollen vereinzelt Sammelelemente wie Münzen und Energiebälle zu finden sein. Der Schwerpunkt des Spiels wird es sein, lineare Level mit Platforming-Einlagen und verschiedenen Gegnerarten abzuschließen und nach Möglichkeit so viele Sammelobjekte wie möglich zu erhalten. Die HUD-Elemente sollen eher sparsam sein: ein Energietracker als Lebensanzeige in Form einer Zahl von 1 bis 100 und ein Münzzähler, der das gesamte Spiel hindurch hochzählt. In den Levels soll es Checkpoints geben, an denen ein Respawn nach dem Tod möglich ist. Damit das Sterben auch bestraft wird, verliert der Spieler pro Tod Teile seiner Münzen. Fallen diese auf Null, wird das Level beendet und der Spieler kommt zurück an den Levelanfang. Um das Spiel zu beenden, muss das letzte Level erreicht und darin eine finale, schwere Herausforderung mit einem Boss bestanden werden. Nach dem Besiegen des finalen Bosses ist es möglich, den Zielbereich zu erreichen und damit das letzte Level abzuschließen.
+
+\subsection{Prototypen}
+
+Start und Idee in einem Level
+
+\vspace{-2mm}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5] {Start_game.png}
+	 \captionsetup{justification=raggedright, singlelinecheck=false, font={scriptsize, it, color=gray}}%linksbündige, kleine, kursive, farbige caption
+	
+	\vspace{-2mm}
+	
+	\tiny{\caption {Prototyp Start/Ingame}}
+	\label{Prototyp Start/Ingame}
+\end{figure}
+
+Ziel eines Levels
+
+\vspace{-2mm}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.5] {Goal_hah.png}
+	\captionsetup{justification=raggedright, singlelinecheck=false, font={scriptsize, it, color=gray}}%linksbündige, kleine, kursive, farbige caption
+	
+	\vspace{-2mm}
+	
+	\tiny{\caption {Levelziel}}
+	\label{Levelziel}
+\end{figure}
+
+\newpage
+
+\subsection{Versionierung \& Meilensteine}
+
+Für die Versionierung wird Github und Git genutzt.\\
+\newline
+Meilensteine sind:
+\begin{enumerate}
+	\item {07.05.26 Erstes simples Jump and Run Level bauen}
+	\item {14.05.26 Einfügen von Gegnern und Levelabschluss}
+	\item {21.05.26 Einfügen von Schuss Mechanik auf X-Achse}
+	\item {28.05.26 Erweitern um mehr Level \& Boss-Level}
+	\item {Je nach Zeit erweitern der Schuss Mechanik auf Y-Achse}
+\end{enumerate}
+
+
+\end{document}
