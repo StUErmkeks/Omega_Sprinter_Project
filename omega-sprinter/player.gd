@@ -1,26 +1,67 @@
-extends Area2D
+### Player.gd
 
-@export var speed = 400 #pixel per second
-var screen_size # Size of the game window.
+extends CharacterBody2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	screen_size = get_viewport_rect().size
+#player movement variables
+@export var speed = 100
+@export var gravity = 200
+@export var jump_height = -100
+
+#movement states
+var is_attacking = false
+
+#movement and physics
+func _physics_process(delta):
+	# vertical movement velocity (down)
+	velocity.y += gravity * delta
+	# horizontal movement processing (left, right)
+	horizontal_movement()
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var velocity	 = Vector2.ZERO #Movement vektor
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity -= 1
-	if Input.is_action_pressed("jump"):
-		velocity.y += 1
+	#applies movement
+	move_and_slide() 
 	
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite2D.play()
-	else:
-		$AnimatedSprite2D.stop()
-	pass
+	#applies animations
+	if !is_attacking:
+		player_animations()
+		
+#horizontal movement calculation
+func horizontal_movement():
+	# if keys are pressed it will return 1 for ui_right, -1 for ui_left, and 0 for neither
+	var horizontal_input = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	# horizontal velocity which moves player left or right based on input
+	velocity.x = horizontal_input * speed
+
+#animations
+func player_animations():
+	#on left (add is_action_just_released so you continue running after jumping)
+	if Input.is_action_pressed("ui_left") || Input.is_action_just_released("ui_jump"):
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("walk")
+		$CollisionShape2D.position.x = 7
+		
+	#on right (add is_action_just_released so you continue running after jumping)
+	if Input.is_action_pressed("ui_right") || Input.is_action_just_released("ui_jump"):
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("walk")
+		$CollisionShape2D.position.x = -7
+	
+	#on idle if nothing is being pressed
+	if !Input.is_anything_pressed():
+		$AnimatedSprite2D.play("idle")
+		
+#singular input captures
+func _input(event):
+	#on attack
+	if event.is_action_pressed("ui_attack"):
+		is_attacking = true
+		$AnimatedSprite2D.play("attack")		
+
+	#on jump
+	if event.is_action_pressed("ui_jump") and is_on_floor():
+		velocity.y = jump_height
+		$AnimatedSprite2D.play("jump")
+	
+	
+#reset our animation variables
+func _on_animated_sprite_2d_animation_finished():
+	is_attacking = false
