@@ -2,10 +2,14 @@
 
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 #player movement variables
 @export var speed = 100
 @export var gravity = 200
 @export var jump_height = -100
+
+signal jump
 
 #movement states
 var is_attacking = false
@@ -34,34 +38,37 @@ func horizontal_movement():
 #animations
 func player_animations():
 	#on left (add is_action_just_released so you continue running after jumping)
-	if Input.is_action_pressed("ui_left") || Input.is_action_just_released("ui_jump"):
-		$AnimatedSprite2D.flip_h = true
-		$AnimatedSprite2D.play("walk")
-		$CollisionShape2D.position.x = 7
-		
+	if Input.is_action_pressed("ui_left") and is_on_floor() and not Input.is_action_pressed("ui_right"):
+		animated_sprite_2d.flip_h = true
+		animated_sprite_2d.play("walk")
 	#on right (add is_action_just_released so you continue running after jumping)
-	if Input.is_action_pressed("ui_right") || Input.is_action_just_released("ui_jump"):
-		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.play("walk")
-		$CollisionShape2D.position.x = -7
-	
+	elif Input.is_action_pressed("ui_right") and is_on_floor() and not Input.is_action_pressed("ui_left" ):
+		animated_sprite_2d.flip_h = false
+		animated_sprite_2d.play("walk")
 	#on idle if nothing is being pressed
-	if !Input.is_anything_pressed():
-		$AnimatedSprite2D.play("idle")
+	elif  is_on_floor(): #&& !Input.is_anything_pressed() :
+		animated_sprite_2d.play("idle")
 		
 #singular input captures
 func _input(event):
 	#on attack
-	if event.is_action_pressed("ui_attack"):
-		is_attacking = true
-		$AnimatedSprite2D.play("attack")		
+	#if event.is_action_pressed("ui_attack"):
+	#	is_attacking = true
+	#	$AnimatedSprite2D.play("attack")		
 
 	#on jump
 	if event.is_action_pressed("ui_jump") and is_on_floor():
 		velocity.y = jump_height
-		$AnimatedSprite2D.play("jump")
-	
-	
+		emit_signal("jump")
+		
 #reset our animation variables
-func _on_animated_sprite_2d_animation_finished():
-	is_attacking = false
+#func _on_animated_sprite_2d_animation_finished():
+	#is_attacking = false
+	
+	
+
+
+func _on_jump() -> void:
+	animated_sprite_2d.play("jump")
+
+	pass # Replace with function body.

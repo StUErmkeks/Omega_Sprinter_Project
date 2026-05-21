@@ -67,6 +67,26 @@ region = Rect2(144, 96, 48, 48)
 atlas = ExtResource("2_pqb02")
 region = Rect2(192, 96, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqb02"]
+atlas = ExtResource("2_pqb02")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy5cj"]
+atlas = ExtResource("2_pqb02")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s04jg"]
+atlas = ExtResource("2_pqb02")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0sl6"]
+atlas = ExtResource("2_pqb02")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b361f"]
+atlas = ExtResource("2_pqb02")
+region = Rect2(192, 144, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yjsgn"]
 atlas = ExtResource("2_pqb02")
 region = Rect2(0, 48, 48, 48)
@@ -166,6 +186,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pqb02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy5cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s04jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s04jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0sl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0sl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b361f")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yjsgn")
 }, {
 "duration": 1.0,
@@ -196,19 +242,20 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y0uv2"]
 radius = 3.0
-height = 10.0
+height = 8.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1270437764]
 script = ExtResource("1_pqb02")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=970084259]
+position = Vector2(-1, 0)
 scale = Vector2(0.41015628, 0.40755203)
 sprite_frames = SubResource("SpriteFrames_6flp4")
-animation = &"attack"
-frame = 1
-frame_progress = 0.14655146
+animation = &"jump"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708122668]
 shape = SubResource("CapsuleShape2D_y0uv2")
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="jump" from="." to="." method="_on_jump"]
