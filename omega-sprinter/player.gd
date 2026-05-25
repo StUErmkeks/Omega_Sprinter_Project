@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var gravity = 200
 @export var jump_height = -100
 
-signal jump
+
 
 #movement states
 var is_attacking = false
@@ -59,16 +59,17 @@ func _input(event):
 	#on jump
 	if event.is_action_pressed("ui_jump") and is_on_floor():
 		velocity.y = jump_height
-		emit_signal("jump")
+		animated_sprite_2d.play("jump")
 		
-#reset our animation variables
+	if is_on_floor() == false and Input.is_action_pressed("ui_right"):
+		animated_sprite_2d.flip_h = false
+	
+	if is_on_floor() == false and Input.is_action_pressed("ui_left"):
+		animated_sprite_2d.flip_h = true
+	
+	
+#rdeset our animation variables
 #func _on_animated_sprite_2d_animation_finished():
 	#is_attacking = false
 	
 	
-
-
-func _on_jump() -> void:
-	animated_sprite_2d.play("jump")
-
-	pass # Replace with function body.
