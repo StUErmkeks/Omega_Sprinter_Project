@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bsoo2xaii63ga"]
+
+[ext_resource type="Script" uid="uid://byykb6buxkqrb" path="res://scripts/enemy_1.gd" id="1_0a874"]
+[ext_resource type="Texture2D" uid="uid://c5nx7uekp3j35" path="res://Assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_jwqgc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a874"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lssre"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlnc2"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmo6u"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arec4"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v73nf"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya6xy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a874")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lssre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlnc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmo6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arec4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v73nf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwqgc"]
+size = Vector2(8, 7)
+
+[node name="Enemy1" type="CharacterBody2D" unique_id=1519892762]
+script = ExtResource("1_0a874")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=706628038]
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(0.875, 0.7916666)
+sprite_frames = SubResource("SpriteFrames_ya6xy")
+frame_progress = 0.39702338
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143253720]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_jwqgc")
+
+[node name="RayCast2D_down" type="RayCast2D" parent="." unique_id=1690024421]
+target_position = Vector2(0, 23)

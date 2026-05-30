@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Omega Sprinter"
-run/main_scene="uid://b08cja7lnvpx0"
+run/main_scene="uid://b7oqjwt7jtk1x"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+enemies=""
 
 [input]
 

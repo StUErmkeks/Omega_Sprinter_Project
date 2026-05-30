@@ -1,9 +1,6 @@
-[gd_scene format=4 uid="uid://b7oqjwt7jtk1x"]
+[gd_scene format=4 uid="uid://b08cja7lnvpx0"]
 
-[ext_resource type="PackedScene" uid="uid://27j5he3qknf1" path="res://Scenes/player1.tscn" id="1_8gbba"]
-[ext_resource type="PackedScene" uid="uid://b3uf5xnry8bmr" path="res://Scenes/levelende.tscn" id="2_jjvhh"]
-[ext_resource type="Script" uid="uid://dlauqp0w61psp" path="res://scripts/levelende.gd" id="3_kry3j"]
-[ext_resource type="PackedScene" uid="uid://bsoo2xaii63ga" path="res://Scenes/enemy_1.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://mun1f8of8ywf" path="res://player1.tscn" id="1_4flbx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4flbx"]
 load_path = "res://.godot/imported/world_tileset.png-f8b17cc593f443d198f49f91b4f6b3e2.ctex"
@@ -230,21 +227,12 @@ sources/0 = SubResource("TileSetAtlasSource_onrkg")
 
 [node name="Main" type="Node2D" unique_id=822765908]
 
-[node name="Player" parent="." unique_id=1270437764 instance=ExtResource("1_8gbba")]
+[node name="Player" parent="." unique_id=1270437764 instance=ExtResource("1_4flbx")]
 position = Vector2(102, 56)
+speed = 110
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1455249073]
 position = Vector2(-8, 4)
 scale = Vector2(0.5, 0.5)
-tile_map_data = PackedByteArray("AAANAAcAAAAAAAoAAAAOAAcAAAAAAAoAAAAPAAcAAAAAAAoAAAAQAAcAAAAAAAoAAAARAAcAAAAAAAoAAAASAAcAAAAAAAoAAAATAAcAAAAAAAoAAAAUAAcAAAAAAAAAAAAUAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAWAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAcAAAAAAAoAAAAKAAcAAAAAAAoAAAALAAcAAAAAAAoAAAAMAAcAAAAAAAoAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAAaAAcAAAAAAAAAAAAbAAcAAAAAAAAAAAAcAAcAAAAAAAAAAAAdAAcAAAAAAAAAAAAeAAcAAAAAAAAAAAAfAAcAAAAAAAAAAAAPAAgAAAAAAAoAAAAQAAgAAAAAAAoAAAARAAgAAAAAAAoAAAASAAgAAAAAAAoAAAASAAkAAAAAAAoAAAATAAkAAAAAAAoAAAAUAAkAAAAAAAoAAAAVAAkAAAAAAAoAAAAVAAgAAAAAAAoAAAAUAAgAAAAAAAoAAAATAAgAAAAAAAoAAAAQAAYAAAAAAAoAAAAgAAcAAAAAAAAAAAAhAAcAAAAAAAAAAAAiAAcAAAAAAAAAAAAjAAcAAAAAAAAAAAAkAAcAAAAAAAAAAAAlAAcAAAAAAAAAAAAmAAcAAAAAAAAAAAAmAAYAAAAAAAAAAAAnAAYAAAAAAAAAAAAoAAYAAAAAAAAAAAApAAYAAAAAAAAAAAAqAAYAAAAAAAAAAAArAAYAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAANAAcAAAAAAAoAAAAOAAcAAAAAAAoAAAAPAAcAAAAAAAoAAAAQAAcAAAAAAAoAAAARAAcAAAAAAAoAAAASAAcAAAAAAAoAAAATAAcAAAAAAAoAAAAUAAcAAAAAAAAAAAAUAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAWAAYAAAAAAAAAAAAGAAYAAAAAAAAAAAAHAAYAAAAAAAAAAAAIAAYAAAAAAAAAAAAJAAcAAAAAAAoAAAAKAAcAAAAAAAoAAAALAAcAAAAAAAoAAAAMAAcAAAAAAAoAAAAEAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAAaAAcAAAAAAAAAAAAbAAcAAAAAAAAAAAAcAAcAAAAAAAAAAAAdAAcAAAAAAAAAAAAeAAcAAAAAAAAAAAAfAAcAAAAAAAAAAAAPAAgAAAAAAAoAAAAQAAgAAAAAAAoAAAARAAgAAAAAAAoAAAASAAgAAAAAAAoAAAASAAkAAAAAAAoAAAATAAkAAAAAAAoAAAAUAAkAAAAAAAoAAAAVAAkAAAAAAAoAAAAVAAgAAAAAAAoAAAAUAAgAAAAAAAoAAAATAAgAAAAAAAoAAAAQAAYAAAAAAAoAAAA=")
 tile_set = SubResource("TileSet_onrkg")
-
-[node name="levelende" parent="." unique_id=554488793 instance=ExtResource("2_jjvhh")]
-position = Vector2(224, 39)
-script = ExtResource("3_kry3j")
-
-[node name="Enemy1" parent="." unique_id=1519892762 groups=["enemies"] instance=ExtResource("4_jjvhh")]
-position = Vector2(188, 51)
-
-[node name="Enemy2" parent="." unique_id=1685872603 groups=["enemies"] instance=ExtResource("4_jjvhh")]
-position = Vector2(275, 50)
