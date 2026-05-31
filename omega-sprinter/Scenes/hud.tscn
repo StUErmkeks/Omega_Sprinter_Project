@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://djr5ypkpsqy6o"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1166965299]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2096811669]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lebenoderso" type="Label" parent="HBoxContainer" unique_id=732923026]
+layout_mode = 2
+text = "Leben"
+
+[node name="liveslabel" type="Label" parent="HBoxContainer" unique_id=826367158]
+layout_mode = 2

@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b3uf5xnry8bmr" path="res://Scenes/levelende.tscn" id="2_jjvhh"]
 [ext_resource type="Script" uid="uid://dlauqp0w61psp" path="res://scripts/levelende.gd" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://bsoo2xaii63ga" path="res://Scenes/enemy_1.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://djr5ypkpsqy6o" path="res://Scenes/hud.tscn" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://skgwjhohf2gp" path="res://scripts/hud.gd" id="6_21xkr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4flbx"]
 load_path = "res://.godot/imported/world_tileset.png-f8b17cc593f443d198f49f91b4f6b3e2.ctex"
@@ -230,8 +232,8 @@ sources/0 = SubResource("TileSetAtlasSource_onrkg")
 
 [node name="Main" type="Node2D" unique_id=822765908]
 
-[node name="Player" parent="." unique_id=1270437764 instance=ExtResource("1_8gbba")]
-position = Vector2(102, 56)
+[node name="Player" parent="." unique_id=1270437764 groups=["player"] instance=ExtResource("1_8gbba")]
+position = Vector2(90, 54)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1455249073]
 position = Vector2(-8, 4)
@@ -244,7 +246,10 @@ position = Vector2(224, 39)
 script = ExtResource("3_kry3j")
 
 [node name="Enemy1" parent="." unique_id=1519892762 groups=["enemies"] instance=ExtResource("4_jjvhh")]
-position = Vector2(188, 51)
+position = Vector2(161, 43)
 
 [node name="Enemy2" parent="." unique_id=1685872603 groups=["enemies"] instance=ExtResource("4_jjvhh")]
-position = Vector2(275, 50)
+position = Vector2(207, 50)
+
+[node name="Hud" parent="." unique_id=1166965299 instance=ExtResource("5_kry3j")]
+script = ExtResource("6_21xkr")

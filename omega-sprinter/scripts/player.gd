@@ -8,11 +8,11 @@ extends CharacterBody2D
 @export var gravity = 200
 @export var jump_height = -100
 
-
-
+var invincible = false
 
 #movement states
 var is_attacking = false
+var damage = false
 
 #movement and physics
 func _physics_process(delta):
@@ -25,16 +25,22 @@ func _physics_process(delta):
 	move_and_slide() 
 	
 	#applies animations
-	if !is_attacking:
+	if !is_attacking and !damage:
 		player_animations()
-		
-	for i in get_slide_collision_count():
-		var col  = get_slide_collision(i)
-		var body = col.get_collider()
-		if body.is_in_group("enemies") and col.get_normal().y <-0.5:
-			body.stomped()
-			velocity.y = -20  
 
+
+func _take_damage():
+	if invincible:
+		return
+	damage = true
+	animated_sprite_2d.play("damage")
+	GameState.lose_life()
+	invincible = true
+	await get_tree().create_timer(1.0).timeout 
+	invincible = false
+	damage =false
+	
+	
 
 #horizontal movement calculation
 func horizontal_movement():
@@ -57,7 +63,8 @@ func player_animations():
 	#on idle if nothing is being pressed
 	elif  is_on_floor(): 
 		animated_sprite_2d.play("idle")
-		
+	
+	
 #singular input captures
 func _input(event):
 	#on attack
@@ -77,8 +84,6 @@ func _input(event):
 		animated_sprite_2d.flip_h = true
 	
 	
-#rdeset our animation variables
+#reset our animation variables
 #func _on_animated_sprite_2d_animation_finished():
 	#is_attacking = false
-	
-	
