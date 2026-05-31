@@ -4,19 +4,24 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var muzzle: Marker2D = $Marker2D
+@export var bullet_scene: PackedScene
+
 #player movement variables
-@export var gravity = 200
-@export var jump_height = -100
+@export var gravity: float = 200
+@export var  jump_height: float = -100
 
 var invincible = false
 
+var shoot_cooldown = 0.0
+
 #movement states
-var is_attacking = false
+
 var damage = false
 
 #movement and physics
 func _physics_process(delta):
-	# vertical movement velocity (down)
+	# vertical movement velocity (down)d a
 	velocity.y += gravity * delta
 	# horizontal movement processing (left, right)
 	horizontal_movement()
@@ -25,16 +30,20 @@ func _physics_process(delta):
 	move_and_slide() 
 	
 	#applies animations
-	if !is_attacking and !damage:
+	if !damage:
 		player_animations()
+	
+	shoot_cooldown -= delta
 
 
-func _take_damage():
+func _take_damage(playerdamage: int, enemy_pos: Vector2) -> void:
 	if invincible:
 		return
 	damage = true
 	animated_sprite_2d.play("damage")
-	GameState.lose_life()
+	GameState.lose_life(playerdamage)
+	var knockback_dir = sign(global_position.x - enemy_pos.x)
+	velocity = Vector2(knockback_dir * 10, -30)
 	invincible = true
 	await get_tree().create_timer(1.0).timeout 
 	invincible = false
@@ -67,11 +76,6 @@ func player_animations():
 	
 #singular input captures
 func _input(event):
-	#on attack
-	#if event.is_action_pressed("ui_attack"):
-	#	is_attacking = true
-	#	$AnimatedSprite2D.play("attack")		
-
 	#on jump
 	if event.is_action_pressed("ui_jump") and is_on_floor():
 		velocity.y = jump_height
@@ -83,7 +87,21 @@ func _input(event):
 	if is_on_floor() == false and Input.is_action_pressed("ui_left"):
 		animated_sprite_2d.flip_h = true
 	
+	#on attack
+	if event.is_action_pressed("ui_attack"):
+		_shoot()
+
+func _shoot() -> void:
+	if shoot_cooldown > 0:
+		return
+	var bullet = bullet_scene.instantiate()
+	
+	var offset = muzzle.position
+	offset.x = abs(offset.x) * (-1 if animated_sprite_2d.flip_h else 1)
+	bullet.global_position = global_position + offset
+	bullet.direction = -1 if animated_sprite_2d.flip_h else 1.0
+	get_tree().current_scene.add_child(bullet)
+	
+	shoot_cooldown = 0.3
 	
 #reset our animation variables
-#func _on_animated_sprite_2d_animation_finished():
-	#is_attacking = false

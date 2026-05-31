@@ -6,6 +6,7 @@ var gravity = 200
 
 var direction = 1
 var flip_cooldown := 0.0
+var playerdamage = 15
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -18,7 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 			stomped()
 			body.velocity.y = -35
 		else:
-			body._take_damage() 
+			body._take_damage(playerdamage, global_position) 
 
 func _physics_process(delta: float) -> void:
 	

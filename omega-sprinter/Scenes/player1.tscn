@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6rjmmqirosi" path="res://scripts/player.gd" id="1_pqb02"]
 [ext_resource type="Texture2D" uid="uid://c6ul0px2qruy" path="res://Assets/craftpix-net-159846-free-sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Boy.png" id="2_pqb02"]
+[ext_resource type="PackedScene" uid="uid://dpd0lgu2q6s54" path="res://Scenes/bullet.tscn" id="2_rliju"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytgb6"]
 atlas = ExtResource("2_pqb02")
@@ -146,7 +147,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sl0af")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -246,13 +247,14 @@ height = 10.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1270437764]
 script = ExtResource("1_pqb02")
+bullet_scene = ExtResource("2_rliju")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=970084259]
 position = Vector2(-1, 0)
 scale = Vector2(0.41015628, 0.40755203)
 sprite_frames = SubResource("SpriteFrames_6flp4")
-animation = &"damage"
-frame = 2
+animation = &"attack"
+frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1708122668]
@@ -264,3 +266,6 @@ position = Vector2(-1, -1)
 zoom = Vector2(8, 8)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1842090656]
+position = Vector2(2, -1)

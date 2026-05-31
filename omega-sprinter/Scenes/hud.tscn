@@ -12,3 +12,18 @@ text = "Leben"
 
 [node name="liveslabel" type="Label" parent="HBoxContainer" unique_id=826367158]
 layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1611329999]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Coins" type="Label" parent="HBoxContainer2" unique_id=1458858607]
+layout_mode = 2
+text = "Coins"
+
+[node name="coinslabel" type="Label" parent="HBoxContainer2" unique_id=1912616446]
+layout_mode = 2
