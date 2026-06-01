@@ -11,13 +11,14 @@ func lose_life(playerdamage: int) -> void:
 	lives_changed.emit(lives)
 	if lives <= 0:
 		print("game over")
-		if coins < 5:
+		if coins <= 0:
+			print("Ganz tot")
+		elif coins < 5:
 			coins = 0
 		else:
 			coins -= 5
 		coins_changed.emit(coins)
-	if coins <= 0:
-		print("Ganz tot")
+	
 
 func add_lives() -> void:
 	if lives >=100:

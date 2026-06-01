@@ -26,7 +26,7 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		return
 	if body.is_in_group("enemies"):
-		body.stomped()
+		body.stomped() 
 	_explode()
 
 func _on_area_entered(area: Area2D) -> void:
@@ -38,7 +38,6 @@ func _on_area_entered(area: Area2D) -> void:
 func _explode() -> void:
 	speed = 0
 	set_process(false)
-	monitoring = false
 	sprite.play("explusion")
 	await sprite.animation_finished
 	queue_free() 

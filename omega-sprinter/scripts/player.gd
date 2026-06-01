@@ -8,8 +8,8 @@ extends CharacterBody2D
 @export var bullet_scene: PackedScene
 
 #player movement variables
-@export var gravity: float = 200
-@export var  jump_height: float = -100
+@export var gravity: float = 225
+@export var  jump_height: float = -115
 
 var invincible = false
 

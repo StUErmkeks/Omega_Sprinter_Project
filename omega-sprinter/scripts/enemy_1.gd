@@ -6,7 +6,7 @@ var gravity = 200
 
 var direction = 1
 var flip_cooldown := 0.0
-var playerdamage = 15
+var playerdamage = 20
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
