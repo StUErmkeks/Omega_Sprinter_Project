@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://fj8eopx32mle"]
+
+[ext_resource type="Script" uid="uid://dwj7tsx1kbjpj" path="res://scripts/deatharea.gd" id="1_j5587"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1upht"]
+size = Vector2(4234, 49)
+
+[node name="Deatharea" type="Area2D" unique_id=1075668436]
+script = ExtResource("1_j5587")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=932921468]
+position = Vector2(247, 14.5)
+shape = SubResource("RectangleShape2D_1upht")

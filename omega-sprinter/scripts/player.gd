@@ -3,11 +3,11 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+#@onready var death_zone: AnimatedSprite2D = 
 
 @onready var muzzle: Marker2D = $Marker2D
 @export var bullet_scene: PackedScene
 
-#player movement variables
 @export var gravity: float = 225
 @export var  jump_height: float = -115
 
@@ -15,10 +15,12 @@ var invincible = false
 
 var shoot_cooldown = 0.0
 
+
 #movement states
 
 var damage = false
-
+func _ready() -> void:
+	GameState.dead_state.connect(_on_dead_state)
 #movement and physics
 func _physics_process(delta):
 	# vertical movement velocity (down)d a
@@ -34,7 +36,21 @@ func _physics_process(delta):
 		player_animations()
 	
 	shoot_cooldown -= delta
+	
 
+func _on_dead_state(is_dead: bool) -> void:  
+	if is_dead:
+		_respawn()
+
+func _on_death_area_entered() -> void:
+	GameState.lose_life(100)
+
+func _respawn () -> void:
+	position = $"../respawnpoint".position
+	animated_sprite_2d.flip_h = false
+	GameState.dead = false
+	GameState.lives = 100
+	GameState.lives_changed.emit(GameState.lives)
 
 func _take_damage(playerdamage: int, enemy_pos: Vector2) -> void:
 	if invincible:
@@ -104,4 +120,4 @@ func _shoot() -> void:
 	
 	shoot_cooldown = 0.3
 	
-#reset our animation variables
+	

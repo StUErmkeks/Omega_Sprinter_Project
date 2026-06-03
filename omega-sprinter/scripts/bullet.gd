@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 60
+@export var speed: float = 80
 
 @onready var sprite: AnimatedSprite2D=$AnimatedSprite2D
 @onready var collishape: CollisionShape2D=$CollisionShape2D

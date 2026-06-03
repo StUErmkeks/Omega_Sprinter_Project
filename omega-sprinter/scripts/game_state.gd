@@ -2,28 +2,30 @@ extends Node
 
 signal lives_changed(new_lives: int)
 signal coins_changed(new_coins: int)
+signal dead_state(dead: bool)
 
 var lives = 100
 var coins = 0
+var dead = false
 
 func lose_life(playerdamage: int) -> void:
 	lives -= playerdamage
 	lives_changed.emit(lives)
 	if lives <= 0:
-		print("game over")
+		dead = true
 		if coins <= 0:
 			print("Ganz tot")
-		elif coins < 5:
+		elif coins < 10:
 			coins = 0
 		else:
-			coins -= 5
+			coins -= 10
 		coins_changed.emit(coins)
-	
+		dead_state.emit(dead)
 
 func add_lives() -> void:
 	if lives >=100:
 		return
-	lives += 25
+	lives += 15
 	if lives > 100:
 		lives = 100
 	lives_changed.emit(lives)

@@ -9,7 +9,7 @@ script = ExtResource("1_e0onf")
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Lebenoderso" type="Label" parent="HBoxContainer" unique_id=732923026]
+[node name="Leben" type="Label" parent="HBoxContainer" unique_id=732923026]
 layout_mode = 2
 text = "Leben"
 
