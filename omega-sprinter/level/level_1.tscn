@@ -16,7 +16,6 @@
 
 [node name="Levelende" parent="." unique_id=554488793 instance=ExtResource("2_vb5hv")]
 position = Vector2(768, -97)
-next_level = "res://level/level_2.tscn"
 
 [node name="Player" parent="." unique_id=1270437764 instance=ExtResource("2_nokfs")]
 position = Vector2(2, -9)
@@ -94,16 +93,16 @@ position = Vector2(407, -89)
 
 [node name="Enemys" type="Node2D" parent="." unique_id=867368352 groups=["enemies"]]
 
-[node name="Enemy4" parent="Enemys" unique_id=1519892762 groups=["enemies"] instance=ExtResource("6_vb5hv")]
+[node name="Enemy4" parent="Enemys" unique_id=1519892762 instance=ExtResource("6_vb5hv")]
 position = Vector2(631, -17)
 
-[node name="Enemy3" parent="Enemys" unique_id=344956007 groups=["enemies"] instance=ExtResource("6_vb5hv")]
+[node name="Enemy3" parent="Enemys" unique_id=344956007 instance=ExtResource("6_vb5hv")]
 position = Vector2(472, -42)
 
-[node name="Enemy1" parent="Enemys" unique_id=2140764410 groups=["enemies"] instance=ExtResource("6_vb5hv")]
+[node name="Enemy1" parent="Enemys" unique_id=2140764410 instance=ExtResource("6_vb5hv")]
 position = Vector2(182, -50)
 
-[node name="Enemy2" parent="Enemys" unique_id=1884596950 groups=["enemies"] instance=ExtResource("6_vb5hv")]
+[node name="Enemy2" parent="Enemys" unique_id=1884596950 instance=ExtResource("6_vb5hv")]
 position = Vector2(120, -50)
 
 [node name="liveballs" type="Node2D" parent="." unique_id=1035782435]

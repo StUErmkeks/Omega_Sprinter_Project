@@ -10,5 +10,3 @@ func _on_body_entered(body: Node2D) -> void:
 		body._on_death_area_entered()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

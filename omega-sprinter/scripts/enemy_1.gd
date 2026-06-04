@@ -47,4 +47,3 @@ func _flip() -> void:
 
 func stomped():
 	queue_free()
-	print("gelöscht")

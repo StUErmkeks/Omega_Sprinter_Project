@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://iywamfqxxwi"]
+
+[sub_resource type="SystemFont" id="SystemFont_8ghk8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ps7vy"]
+font = SubResource("SystemFont_8ghk8")
+font_size = 100
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ende" type="Control" unique_id=2065830007]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="." unique_id=258662398]
+layout_mode = 0
+offset_left = -442.0
+offset_top = -80.0
+offset_right = 446.0
+offset_bottom = 57.0
+text = "Thanks for Playing"
+label_settings = SubResource("LabelSettings_ps7vy")

@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 GameState="*uid://dbh2l2mulct54"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [global_group]
 
 enemies=""
@@ -68,4 +73,5 @@ ui_attack={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_repeat=1
 rendering_device/driver.windows="d3d12"

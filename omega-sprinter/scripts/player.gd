@@ -46,7 +46,12 @@ func _on_death_area_entered() -> void:
 	GameState.lose_life(100)
 
 func _respawn () -> void:
-	position = $"../respawnpoint".position
+	if GameState.respawn_position == Vector2.ZERO:
+		position = $"../respawnpoint".position
+	else:
+		position = GameState.respawn_position
+	
+	
 	animated_sprite_2d.flip_h = false
 	GameState.dead = false
 	GameState.lives = 100

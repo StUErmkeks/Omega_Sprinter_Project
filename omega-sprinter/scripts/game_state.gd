@@ -7,6 +7,7 @@ signal dead_state(dead: bool)
 var lives = 100
 var coins = 0
 var dead = false
+var respawn_position = Vector2.ZERO
 
 func lose_life(playerdamage: int) -> void:
 	lives -= playerdamage
@@ -14,11 +15,11 @@ func lose_life(playerdamage: int) -> void:
 	if lives <= 0:
 		dead = true
 		if coins <= 0:
-			print("Ganz tot")
-		elif coins < 10:
+			reset_checkpoint()
+		elif coins < 15:
 			coins = 0
 		else:
-			coins -= 10
+			coins -= 15
 		coins_changed.emit(coins)
 		dead_state.emit(dead)
 
@@ -33,3 +34,6 @@ func add_lives() -> void:
 func add_coin() -> void:
 	coins +=1
 	coins_changed.emit(coins)
+
+func reset_checkpoint() -> void:  
+	respawn_position = Vector2.ZERO

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bteurumqcpyxu" path="res://Scenes/liveball.tscn" id="7_vir0n"]
 [ext_resource type="PackedScene" uid="uid://bsoo2xaii63ga" path="res://Scenes/enemy_1.tscn" id="8_fvot5"]
 [ext_resource type="PackedScene" uid="uid://b3uf5xnry8bmr" path="res://Scenes/levelende.tscn" id="9_fvot5"]
+[ext_resource type="PackedScene" uid="uid://c3auvael4gcu1" path="res://Scenes/checkpoint.tscn" id="10_rgj0g"]
 
 [node name="level_2" type="Node2D" unique_id=1407956572]
 
@@ -146,3 +147,6 @@ position = Vector2(1195, 102)
 [node name="Levelende" parent="." unique_id=554488793 instance=ExtResource("9_fvot5")]
 position = Vector2(1243, 96)
 next_level = "res://level/level_3.tscn"
+
+[node name="checkpoint" parent="." unique_id=1823309251 instance=ExtResource("10_rgj0g")]
+position = Vector2(633, 95)
