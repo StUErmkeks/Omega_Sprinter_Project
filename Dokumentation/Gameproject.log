@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.21)  5 JUN 2026 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.21)  5 JUN 2026 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1038,12 +1038,6 @@ Overfull \hbox (9.25592pt too wide) in paragraph at lines 272--273
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Overfull \hbox (13.44147pt too wide) in paragraph at lines 281--283
-[]\T1/phv/m/n/10 Im Level ste-hen dem Spieler die Grundle-gen-den Mechaniken de
-s Laufen Sprin-gen und Schieÿens zur Ver-fü-gung.
- []
-
 LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <10> not available
 (Font)              Font shape `TS1/phv/m/sl' tried instead on input line 293.
 LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
@@ -1114,12 +1108,18 @@ File: Bilder/lev1ende.png Graphic file (type png)
 <use Bilder/lev1ende.png>
 Package pdftex.def Info: Bilder/lev1ende.png  used on input line 478.
 (pdftex.def)             Requested size: 262.9556pt x 110.66267pt.
+
+Overfull \hbox (0.87317pt too wide) in paragraph at lines 486--488
+[]\T1/phv/m/n/10 Im zweiten Level gibt es erst zur Mitte ein neues er-wäh-nensw
+ertes El-e-ment. In der Mitte kommt ein Check-point
+ []
+
 <Bilder/lev2checkpnt.png, id=289, 297.36093pt x 114.4275pt>
 File: Bilder/lev2checkpnt.png Graphic file (type png)
 <use Bilder/lev2checkpnt.png>
 Package pdftex.def Info: Bilder/lev2checkpnt.png  used on input line 523.
 (pdftex.def)             Requested size: 267.62236pt x 102.9838pt.
- [9 <./Bilder/lev1ende.png> <./Bilder/lev2checkpnt.png>]
+[9 <./Bilder/lev1ende.png> <./Bilder/lev2checkpnt.png>]
 <Bilder/lev3stil.png, id=314, 378.66469pt x 188.20313pt>
 File: Bilder/lev3stil.png Graphic file (type png)
 <use Bilder/lev3stil.png>
@@ -1152,6 +1152,12 @@ Overfull \hbox (20.02676pt too wide) in paragraph at lines 585--588
  Münzver-lust und die Check-points funk-tion-ieren
  []
 
+
+Overfull \hbox (4.98863pt too wide) in paragraph at lines 585--588
+\T1/phv/m/n/10 Falls es in der Zukunft dazu kom-men würde an dem Pro-jekt weite
+r zu ar-beiten, wäre eine mögliche Er-weiterung,
+ []
+
 [12] (Gameproject.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -1163,17 +1169,17 @@ Package rerunfilecheck Info: File `Gameproject.out' has not changed.
 Here is how much of TeX's memory you used:
  27847 strings out of 467871
  525544 string characters out of 5418376
- 1128641 words of memory out of 5000000
+ 1128660 words of memory out of 5000000
  56137 multiletter control sequences out of 15000+600000
  658106 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,11n,108p,1549b,1800s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,11n,108p,1555b,1800s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\sturm\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 1000.pk><C:/Users/sturm/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/
 uhvb8a.pfb><C:/Users/sturm/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvet
 ic/uhvr8a.pfb><C:/Users/sturm/AppData/Local/Programs/MiKTeX/fonts/type1/urw/hel
 vetic/uhvro8a.pfb>
-Output written on Gameproject.pdf (14 pages, 1676122 bytes).
+Output written on Gameproject.pdf (14 pages, 1676176 bytes).
 PDF statistics:
  411 PDF objects out of 1000 (max. 8388607)
  156 named destinations out of 1000 (max. 500000)
