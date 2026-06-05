@@ -1,4 +1,12 @@
-\contentsline {section}{\numberline {1}Planung}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Produkt und Idee in eigenen Worten}{1}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Prototypen}{1}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Versionierung \& Meilensteine}{2}{subsection.1.3}%
+\contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
+\contentsline {section}{\numberline {2}Planung}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Produkt und Idee in eigenen Worten}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Prototypen}{1}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Versionierung \& Meilensteine}{2}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Entwürfe}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Entwurf Horizontales Movement des Spielers}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Entwurf: Input des Spielers}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Entwurf: Gegnerinteraktion}{3}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Durchführung}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Beschreiben des Ablaufs der Implementierung}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Beschreibung des Spielablaufs, Screenshots und Codeausschnitte}{4}{subsection.4.2}%

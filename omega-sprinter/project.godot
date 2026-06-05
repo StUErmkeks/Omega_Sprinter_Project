@@ -13,6 +13,7 @@ config_version=5
 config/name="Omega Sprinter"
 run/main_scene="uid://b7oqjwt7jtk1x"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.14183876, 0.10585623, 0.27977297, 1)
 config/icon="res://icon.svg"
 
 [autoload]
