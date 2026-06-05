@@ -55,11 +55,7 @@
 	
 	Name: &Nils Brück\\
 	
-	\vspace{5mm}
-	
 	Datum: &\today\\
-	
-	\vspace{5mm}
 	
 	Klasse: &11BGx3\\
 	
@@ -217,6 +213,8 @@ Diese Sektion behandelt die Strukturgramm Entwürfe für die Grundlegendsten Mec
 	\label{Struckturgramm enemy_entered}
 \end{figure}
 
+\newpage
+
 \section{Durchführung}
 
 In dieser Sektion der Dokumentation wird die aktive Durchführung des Projekts behandelt.
@@ -324,7 +322,7 @@ if event.is_action_pressed("ui_jump") and is_on_floor():
 	\label{Player jump}
 \end{table}
 
-Level Eins ist sehr simpel gehalten und bietet kaum Schwierigkeit um den Spieler in das Spiel rein finden zu lassen. Auch sind direkt am Anfang Münzen platziert um dem Spieler direkt das Hauptsammelobjekt des Spieles zu Präsentieren. neben den Münzen ist auch eine Plattform in der Luft zu sehen, welche dem Spieler gleich mitteilt, dass es die Möglichkeit gibt Vertikales Movement zu nutzen. 
+Level 1 ist sehr simpel gehalten und bietet kaum Schwierigkeit um den Spieler in das Spiel rein finden zu lassen. Auch sind direkt am Anfang Münzen platziert um dem Spieler direkt das Hauptsammelobjekt des Spieles zu Präsentieren. neben den Münzen ist auch eine Plattform in der Luft zu sehen, welche dem Spieler gleich mitteilt, dass es die Möglichkeit gibt Vertikales Movement zu nutzen. 
 
 \begin{figure}[h]
 	\includegraphics[scale=0.9] {Bilder/lev1start.png}
@@ -467,6 +465,8 @@ Um dies zu realisieren wird ein Gamestate genutzt, welcher die Variablen handhab
 	\label{Level 1 Liveball}
 \end{figure}
 
+\newpage
+
 Wenn das Level abgeschlossen ist kann man mit den bereits erläuterten Levelenden zum nächsten Level gehen.
 
 \begin{figure}[h]
@@ -478,7 +478,123 @@ Wenn das Level abgeschlossen ist kann man mit den bereits erläuterten Levelende
 	\label{Level 1 ende}
 \end{figure}
 
-Im zweiten Level gibt es erst zur Mitte ein neues erwähnenswertes Element. in der Mitte dann kommt ein Checkpoint zum Einsatz, damit der Spieler bei einem Tod nicht das ganze Level neu spielen muss. Besinderheit, am Checkpoint ist, dass wenn die Münzen auf Null Fallen wird dieser nicht mehr genutzt und der Spieler respawnt am Levelanfang. 
+Im zweiten Level gibt es erst zur Mitte ein neues erwähnenswertes Element. In der Mitte dann kommt ein Checkpoint zum Einsatz, damit der Spieler bei einem Tod nicht das ganze Level neu spielen muss. Besonderheit, am Checkpoint ist, dass wenn die Münzen auf Null Fallen wird dieser nicht mehr genutzt und der Spieler respawnt am Levelanfang. \\
+Um dies zu Implementieren gibt es ein Checkpoint Skript in dem wieder nur die Kollision und Animation geregelt wird. Das wichtigste läuft im Gamestate und Player. Der Gamestate regelt das Verhalten bei Null Münzen und das Resetten der Position des Respawnpoints. Außerdem ist der Gamestate dafür zuständig die Position des Checkpoints an den Player weiterzugeben. Der Player hat die Methode \_respawn. In dieser wird in Kombination mit dem Gamestate die Position des Respawns, den Todesstatus und die Leben beim Respawn geregelt.
+
+\begin{table}[h]
+	\begin{tcolorbox}[colframe=Black, sharp corners, boxrule=0.5mm, colback=white]
+		
+		\vspace{-5mm}
+		
+\begin{lstlisting}[language=Python]
+func _respawn () -> void:
+	#Standart Respawn position
+	if GameState.respawn_position == Vector2.ZERO:
+		#Wird an Ort der Node2D gesetzt
+		position = $"../respawnpoint".position
+	else:
+		#Bekommt ueber den Gamestate die Checkpoint Coordinaten
+		position = GameState.respawn_position
+
+	#Sprite geht immer in Richtung rechts beim Respawn
+	animated_sprite_2d.flip_h = false
+	#Status fuer den Gamestate 
+	GameState.dead = false
+	#Setzt Leben wieder auf 100
+	GameState.lives = 100
+	#Nutzt Signal um die Leben zu uebermitteln
+	GameState.lives_changed.emit(GameState.lives)
+\end{lstlisting}
+	\end{tcolorbox}
+	\vspace{-5mm}
+	
+	\tiny{\caption {Respawn Funktion}}
+	\label{Checkpoint Player}
+\end{table}
+
+Ingame sieht dies dann so Aus
+
+\begin{figure}[h]
+	\includegraphics[scale=0.9] {Bilder/lev2checkpnt.png}
+	
+	\vspace{-3mm}
+	
+	\tiny{\caption {Level 2 Checkpoint}}
+	\label{Level 2 Checkpoint}
+\end{figure}
+
+\newpage
+
+In den Leveln Drei und Vier kommen keine neuen Sachen hinzu. Es sind lediglich weitere Level mit anderen Leveldesign ideen. 
+
+Stil aus Level 3
+
+\begin{figure}[h]
+	\includegraphics[scale=0.9] {Bilder/lev3stil.png}
+	
+	\vspace{-3mm}
+	
+	\tiny{\caption {Level 3 Stil}}
+	\label{Level 3 Stil}
+\end{figure}
+
+Stil aus Level 4
+
+\begin{figure}[h]
+	\includegraphics[scale=0.9] {Bilder/lev4stil.png}
+	
+	\vspace{-3mm}
+	
+	\tiny{\caption {Level 4 Stil}}
+	\label{Level 4 Stil}
+\end{figure}
+
+\newpage
+
+Das letzte Level, also Level 5, bietet eine letzte schwere Herausforderung. Das komplette Level verläuft über dem Abgrund und beinhaltet keine Checkpoints. In diesem Level kommt damit auch die Deatharea besonders auffällig zum Einsatz. Wichtigster Bestandteil davon sind das deatharea Skript, der Gamestate und eine Funktion im Player. Da in diesen Skripts keine neuen Codefunktionen geschrieben werden werden diese hier nicht weiter erläutert. Die Deathare erkennt nur das eintreten eines anderen Bodys aus der Player-Gruppe und ruft die dazugehörige Funktion beim Spieler aus. In dieser wird einfach nur eine Lebensreduktion um Hundert an den Gamestate übermittelt und damit der Spieler dann umgebracht und respawnt. 
+
+\begin{figure}[h]
+	\includegraphics[scale=0.7] {Bilder/lev5stil.png}
+	
+	\vspace{-3mm}
+	
+	\tiny{\caption {Level 5}}
+	\label{Level 5 ingame}
+\end{figure}
+
+\subsection{Fehler und Behebung}
+
+Einer der auffälligsten Fehler im Spiel war die fehlerhafte Animation, wenn der Spieler gleichzeitig nach Links und nach Rechts Laufen gedrückt hat. Lösen ließ sich das Problem mit einem ändern der Bedingung in den Playeranimationen. Der Code Fragte zuerst nur nach Bodenkontakt und Richtung in welche gedrückt wird ab. Dies führte jedoch dazu, dass in diesem Fall dauerhaft eine Laufanimation gespielt wurde aber der Charakter nicht bewegt wurde. lösen konnte man das Problem indem die Bedingung erweiter wurde um eine abfrage, ob die andere Laufrichtung auch gedrückt ist. \\
+\newline
+Ein anderes Problem ist bei der Schuss-Mechanik aufgetreten. Drehte sich der Spieler flog das Geschoss weiterhin in die falsche Richtung und verschwand wenn der Spieler getroffen wurde. Das treffen des Spielers konnte einfach gelöst werden durch eine abfrage der Gruppe in der die getroffene Node ist. Das Problem mit der Schießrichtung war jedoch komplexer. Mithilfe von Claude Sonnet 4.6 konnte durch das hinzufügen des Offsets beim Player-Skript gelöst werden, weil dadurch der Marker2D gedreht wurde und auch die Richtung an das Geschoss weitergegeben wurde.\\
+\newline
+Abgesehen von diesen Fehlern gab es keine sonderlich erwähnenswerten Fehler.
+
+\subsection{Begründung zur Abweichung}
+Die in der Planung gemachten Pflichtmeilensteine wurden alle erreicht. Damit ist keine Abweichung der ursprünglichen Planung vorhanden. Das Zusatzziel des Schießens auf der y-Achse wurde nicht erreicht. Zum einen durch zeitliche Knappheit und der mit dem Schießen auf der y-Achse verbundenen stark nötigen Änderungen am Leveldesign.
+
+\newpage
+
+\section{Fazit und Ausblick}
+
+Das Projekt „Omega Sprinter" wurde erfolgreich abgeschlossen. Alle geplanten Ziele wurden erreicht: der 2D-Plattformer mit Run-and-Gun-Gameplay, das Strafsystem durch Münzverlust und die Checkpoints funktionieren wie vorgesehen.
+Das Projekt hat auch gezeigt wie wichitg es ist realistische Ziele zu setzten und in kleinen schritten an diesen zu Arbeiten.\\
+Falls es in der Zukunft dazu kommen würde an dem Projekt weiter zu arbeiten wäre eine mögliche Erweiterung ein richtiger Boss mit mehreren Leben und noch weiter Gegner-arten, welche auf komplexere Fortbewegung setzten. 
+
+\section{Quellen}
+Hauptquelle war diese Online Tutorial:\\
+\url{https://dev.to/christinec_dev/series/23702}
+Außerdem gab es noch verschieden Promts an das KI Modell Sonnet 4.6 von Anthropic. Darunter:\\
+\vspace{-5mm}
+\begin{itemize}
+	\item Wie kann ich meinem 2D player in godot 4 eine schuss mechanik geben?
+	\item Wie kann ich meinem 2D player in godot 4 eine schuss mechanik geben?
+	\item Wie kann ich die muzzel flippen die bullet fliegt sonst in den player und verschwiendet und einen schuss cooldown
+	\item Wie kann ich den sprite der bullet umdrehen
+\end{itemize}
+Als letztes wurde noch die offizielle Godot Dokumentation genutzt.\\
+\url{https://docs.godotengine.org/de/4.x/}
 
 
 \end{document}
+
